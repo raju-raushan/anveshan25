@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import logoImage from './assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navigation: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-none px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
@@ -44,18 +45,27 @@ const Navigation: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="relative">
-              <Zap className="w-8 h-8 text-primary" />
-              <div className="absolute inset-0 animate-glow-pulse">
-                <Zap className="w-8 h-8 text-primary/50" />
-              </div>
-            </div>
-            <div>
+            <div className="relative w-40 h-22">
+  <div className="absolute">
+    <img 
+      src={logoImage} 
+      alt="Glowing Logo" 
+      className="w-full h-full opacity-50"
+    />
+  </div>
+
+  <img 
+    src={logoImage} 
+    alt="Logo" 
+    className="relative w-full h-full"
+  />
+</div>
+            {/* <div>
               <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                TechNova
+              अNवEषN
               </h1>
-              <p className="text-xs text-muted-foreground -mt-1">FEST 2024</p>
-            </div>
+              <p className="text-xs text-muted-foreground -mt-1">2025</p>
+            </div> */}
           </motion.div>
 
           {/* Desktop Navigation */}

@@ -62,11 +62,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           >
             <div className="relative">
               <h1 className="text-6xl md:text-8xl font-bold bg-gradient-tech bg-clip-text text-transparent">
-                TECHNOVA
+                अNवEषN 2K25
               </h1>
               <div className="absolute inset-0 animate-glow-pulse">
                 <h1 className="text-6xl md:text-8xl font-bold text-primary/20">
-                  TECHNOVA
+                  अNवEषN 2K25
                 </h1>
               </div>
             </div>

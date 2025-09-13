@@ -1,18 +1,28 @@
-
-import React, { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import LoadingScreen from '@/components/LoadingScreen';
-import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import EventsPreview from '@/components/EventsPreview';
-import ParticleBackground from '@/components/ParticleBackground';
+import CircularGallery from '@/components/CircularGallery';
 import ClickSpark from '@/components/ClickSpark';
+import EventsPreview from '@/components/EventsPreview';
+import HeroSection from '@/components/HeroSection';
+import LoadingScreen from '@/components/LoadingScreen';
+import MasonryGallery from '@/components/MasonryGallery';
+import Navigation from '@/components/Navigation';
 import PixelCard from '@/components/PixelCard';
 import ProfileCard from '@/components/ProfileCard';
-import MasonryGallery from '@/components/MasonryGallery';
-import CircularGallery from '@/components/CircularGallery';
+import RippleGrid from '@/components/RippleGrid';
 import ScrollStack from '@/components/ScrollStack';
+import TeamSection from "@/components/TeamSection";
+import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import raushan from '../components/assets/mee-removebg-preview.png';
+import ritu from '../components/assets/Ritu mam.png';
+import sneha from '../components/assets/sneha mam.png';
+
+// Gradient constants for ProfileCard
+const DEFAULT_BEHIND_GRADIENT =
+  "radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(266,100%,90%,var(--card-opacity)) 4%,hsla(266,50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(266,25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(266,0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#00ffaac4 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#00c1ffff 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#c137ffff 0%,#07c6ffff 40%,#07c6ffff 60%,#c137ffff 100%)";
+
+const DEFAULT_INNER_GRADIENT =
+  "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,39 +32,43 @@ const Index = () => {
   };
 
   // Sample data for components
+
   const speakers = [
     {
-      name: "Dr. Sarah Johnson",
-      designation: "AI Research Director",
-      description: "Leading expert in machine learning and artificial intelligence with 15+ years of experience."
+      name: "Tejas Dutta",
+      designation: "Student",
+      description: "Student of Computer Science and Engineering"
     },
     {
-      name: "Prof. Michael Chen",
-      designation: "Robotics Engineer",
-      description: "Pioneer in autonomous robotics and human-robot interaction technologies."
+      name: "Raushan Raj",
+      designation: "Student",
+      description: "18+ years of experience in Student Life"
     },
     {
-      name: "Dr. Priya Patel",
-      designation: "Blockchain Specialist",
-      description: "Cryptocurrency and blockchain technology expert, author of multiple research papers."
+      name: "Navnita Sharma",
+      designation: "Student",
+      description: "Student of Computer Science and Engineering"
     }
   ];
 
   const organizers = [
     {
-      name: "Alex Rivera",
-      designation: "Event Coordinator",
-      description: "Passionate about bringing together tech enthusiasts and creating memorable experiences."
+      name: "Dr. Ritu tondon",
+      designation: "Faculty Coordinator",
+      description: "Passionate about bringing together tech enthusiasts and creating memorable experiences.",
+      image: {ritu}
     },
     {
-      name: "Sam Kumar",
-      designation: "Technical Lead",
-      description: "Full-stack developer with expertise in modern web technologies and event management."
+      name: "Prof. Snehlata Mishra",
+      designation: "Faculty Coordinator",
+      description: "Full-stack developer with expertise in modern web technologies and event management.",
+      image: {sneha}
     },
     {
-      name: "Emma Watson",
-      designation: "Marketing Head",
-      description: "Creative marketing professional specializing in tech events and community building."
+      name: "Raushan Raj",
+      designation: "Student Coordinator",
+      description: "Creative marketing professional specializing in tech events and community building.",
+      image: {raushan}
     }
   ];
 
@@ -78,17 +92,17 @@ const Index = () => {
   const scheduleData = [
     {
       day: 'Day 1',
-      date: 'March 15, 2025',
+      date: 'September 15, 2025',
       items: [
-        { time: '9:00', title: 'Opening Ceremony', description: 'Welcome to Anveshan 2K25', speaker: 'Dr. Sarah Johnson', location: 'Main Auditorium' },
-        { time: '10:30', title: 'AI Innovation Keynote', description: 'The Future of Artificial Intelligence', speaker: 'Prof. Michael Chen', location: 'Tech Hall A' },
+        { time: '9:00', title: 'Opening Ceremony', description: 'Welcome to Anveshan 2K25', speaker: 'Er. Sanjeev Agrawal', location: 'Main Auditorium' },
+        { time: '10:30', title: 'AI Innovation Keynote', description: 'The Future of Artificial Intelligence', speaker: 'Prof. Snehlata Mishra', location: 'Tech Hall A' },
         { time: '14:00', title: 'Hackathon Begins', description: '48-hour coding marathon starts', location: 'Innovation Lab' },
-        { time: '16:00', title: 'Robotics Workshop', description: 'Build and program autonomous robots', speaker: 'Dr. Priya Patel', location: 'Lab B' }
+        { time: '16:00', title: 'Robotics Workshop', description: 'Build and program autonomous robots', speaker: 'Dr. Ritu Tondon', location: 'Lab B' }
       ]
     },
     {
       day: 'Day 2',
-      date: 'March 16, 2025',
+      date: 'September 16, 2025',
       items: [
         { time: '9:00', title: 'Blockchain Summit', description: 'Exploring decentralized technologies', speaker: 'Industry Experts', location: 'Conference Room' },
         { time: '11:00', title: 'Tech Startup Pitch', description: 'Young entrepreneurs present their ideas', location: 'Pitch Arena' },
@@ -99,19 +113,20 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Global Particle Background */}
-      <ParticleBackground 
-        particleCount={200}
-        speed={0.02}
-        particleColors={['hsl(220, 100%, 60%)', 'hsl(270, 85%, 65%)', 'hsl(180, 100%, 65%)']}
-        moveParticlesOnHover={true}
-        particleHoverFactor={1.5}
-        alphaParticles={true}
-        particleBaseSize={40}
-        sizeRandomness={0.8}
-        className="opacity-30"
-      />
+    <div className="min-h-screen relative bg-black">
+      {/* Global Ripple Grid Background */}
+      <div className="fixed inset-0" style={{ zIndex: -1 }}>
+        <RippleGrid
+          enableRainbow={false}
+          gridColor="#3b82f6"
+          rippleIntensity={0.08}
+          gridSize={8}
+          gridThickness={12}
+          mouseInteraction={true}
+          mouseInteractionRadius={1.5}
+          opacity={0.7}
+        />
+      </div>
       
       {/* Click Spark Effect */}
       <ClickSpark />
@@ -221,13 +236,24 @@ const Index = () => {
                     <ProfileCard
                       key={index}
                       name={organizer.name}
-                      designation={organizer.designation}
-                      description={organizer.description}
+                      title={organizer.designation}
+                      handle={organizer.name.toLowerCase().replace(/\s+/g, '')}
+                      status="Online"
+                      contactText="Contact"
+                      avatarUrl={organizer.image.ritu || organizer.image.sneha || organizer.image.raushan}
+                      miniAvatarUrl={organizer.image.ritu || organizer.image.sneha || organizer.image.raushan}
+                      showUserInfo={true}
+                      enableTilt={true}
+                      enableMobileTilt={false}
+                      behindGradient={DEFAULT_BEHIND_GRADIENT}
+                      innerGradient={DEFAULT_INNER_GRADIENT}
+                      onContactClick={() => console.log(`Contact ${organizer.name}`)}
                     />
                   ))}
                 </div>
               </div>
             </section>
+            <TeamSection />
           </main>
         </>
       )}

@@ -6,28 +6,28 @@ const AboutSection: React.FC = () => {
   const features = [
     {
       icon: Code,
-      title: 'Hackathons',
-      description: '48-hour coding challenges that push the boundaries of innovation'
+      title: 'Techno Parv',
+      description: 'Sports events that push the boundaries of innovation'
     },
     {
       icon: Brain,
-      title: 'AI Workshops',
-      description: 'Hands-on sessions with cutting-edge artificial intelligence technologies'
-    },
-    {
-      icon: Cpu,
-      title: 'Robotics Arena',
-      description: 'Compete with autonomous bots in challenging technical competitions'
+      title: 'Fun Fair',
+      description: 'Fun games that push the boundaries of innovation'
     },
     {
       icon: Rocket,
-      title: 'Startup Pitch',
-      description: 'Present your revolutionary ideas to industry leaders and investors'
+      title: 'Cultural Carnival',
+      description: 'Cultural events that push the boundaries of innovation'
     },
     {
       icon: Users,
       title: 'Tech Talks',
       description: 'Learn from industry experts and visionary thought leaders'
+    },
+    {
+      icon: Rocket,
+      title: 'Sports',
+      description: 'Cultural events that push the boundaries of innovation'
     },
     {
       icon: Trophy,
@@ -37,12 +37,12 @@ const AboutSection: React.FC = () => {
   ];
 
   const timeline = [
-    { year: '2019', title: 'Genesis', description: 'TechNova Fest was born with 500 participants' },
+    { year: '2019', title: 'Genesis', description: 'अNवEषN was born with 500 participants' },
     { year: '2020', title: 'Digital Revolution', description: 'First virtual fest reaching 2000+ students globally' },
     { year: '2021', title: 'Innovation Hub', description: 'Introduced AI/ML competitions and startup incubation' },
     { year: '2022', title: 'Global Expansion', description: '50+ international universities participated' },
     { year: '2023', title: 'Tech Excellence', description: 'Recognized as India\'s top university tech fest' },
-    { year: '2024', title: 'Future Vision', description: 'Pioneering next-gen tech with AR/VR experiences' }
+    { year: '2024', title: 'Future Vision', description: 'Super exciting fest' }
   ];
 
   return (
@@ -57,11 +57,10 @@ const AboutSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="bg-gradient-tech bg-clip-text text-transparent">TechNova</span>
+            About <span className="bg-gradient-tech bg-clip-text text-transparent">अNवेshण</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            TechNova Fest is more than just a technical festival – it's a convergence of brilliant minds, 
-            cutting-edge technology, and boundless innovation that shapes the future of technology.
+          Let's Explore...
           </p>
         </motion.div>
 
@@ -76,31 +75,20 @@ const AboutSection: React.FC = () => {
             className="space-y-8"
           >
             <div className="bg-glass/30 backdrop-blur-sm border border-glass-border rounded-2xl p-8 hover:bg-glass/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
+              <h3 className="text-2xl font-bold mb-4 text-primary">Let's Explore the Fest</h3>
               <p className="text-foreground/80 leading-relaxed">
-                To create an ecosystem where technology enthusiasts, innovators, and future leaders 
-                converge to explore, learn, and build solutions that address real-world challenges. 
-                We believe in fostering creativity, collaboration, and technical excellence.
+              Welcome to अन्वेषण 2025, the dynamic sequel to our college tech fest hosted by SAGE University Indore. Building on the triumph of our inaugural event, we're excited to announce that अन्वेषण 2025 will run from September 15th to 17th, 2025. This three-days extravaganza guarantees a thrilling experience with tech competitions, and engaging activities for all interests. Prepare for an array of captivating events, forums, competitions, and tech showcases, culminating in a celebration of talent and innovation. Join us for an unforgettable experience!
               </p>
             </div>
 
             <div className="bg-glass/30 backdrop-blur-sm border border-glass-border rounded-2xl p-8 hover:bg-glass/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Our Vision</h3>
+              <h3 className="text-2xl font-bold mb-4 text-secondary">Sage University Indore: A Blend of Modern Facilities and Academic Excellence</h3>
               <p className="text-foreground/80 leading-relaxed">
-                To be the premier platform that bridges the gap between academic learning and 
-                industry innovation, empowering the next generation of technologists to create 
-                a sustainable and technologically advanced future.
+              SAGE University, Indore, as one of the pioneer universities of Madhya Pradesh, established by the Act of State Government of Madhya Pradesh, in the year 2017, also it is approved under UGC Section 2(f) in the year 2019. The SAGE University, Indore is the youngest university of India accredited with NAAC A+ grade in its first cycle. The SAGE University works under the banner of SAGE Group and is proudly imparting quality education to more than 12000 students in multiple disciplines under the guidance of a man with a vision, Er. Sanjeev Agrawal, CMD, The Sage Group and Chancellor, SAGE University, Indore, well-known entrepreneur, real estate developer, philanthropist and dedicated educator from Central India involved directly and indirectly in various charitable, socially and environmentally conscious pursuits.
               </p>
             </div>
 
-            <div className="bg-glass/30 backdrop-blur-sm border border-glass-border rounded-2xl p-8 hover:bg-glass/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-accent">Why TechNova?</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                Experience hands-on learning with industry mentors, compete in cutting-edge challenges, 
-                network with like-minded innovators, and showcase your skills on a national platform. 
-                TechNova is where passion meets opportunity.
-              </p>
-            </div>
+
           </motion.div>
 
           {/* Right: Features Grid */}

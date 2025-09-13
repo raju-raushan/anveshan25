@@ -1,9 +1,9 @@
 
-import React from 'react';
+import SplitText from '@/components/SplitText';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Zap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import SplitText from '@/components/SplitText';
+import React from 'react';
 
 const HeroSection: React.FC = () => {
   const stats = [{
@@ -21,27 +21,15 @@ const HeroSection: React.FC = () => {
   }, {
     icon: MapPin,
     label: 'Venue',
-    value: 'TechNova Campus'
+    value: 'SUI'
   }];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0" style={{ zIndex: 2 }}>
-        {/* Tech Grid Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{
+      {/* Subtle Gradient Orbs - Reduced opacity to not interfere with RippleGrid */}
+      <div className="absolute inset-0" style={{ zIndex: 1 }}>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{
           animationDelay: '1s'
         }} />
       </div>
@@ -64,7 +52,7 @@ const HeroSection: React.FC = () => {
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold my-8 sm:my-16 md:my-[100px]">
                 <SplitText 
-                  text="Anveshan 2K25" 
+                  text="अNवEषN 2K25" 
                   className="bg-gradient-tech bg-clip-text text-transparent"
                   delay={1}
                   duration={0.08}
@@ -78,7 +66,7 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }} 
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-light tracking-wide px-4"
             >
-              The Ultimate University Technical Festival
+              The Ultimate University Technical Festival is back with a bang!
             </motion.p>
 
             <motion.div 
@@ -87,7 +75,7 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }} 
               className="text-base sm:text-lg text-primary font-medium"
             >
-              March 15-17, 2025 • TechNova University
+              September 15-17, 2025 • SAGE University
             </motion.div>
           </div>
 
@@ -158,7 +146,7 @@ const HeroSection: React.FC = () => {
         className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center space-y-2 text-muted-foreground">
-          <span className="text-xs sm:text-sm">Scroll to explore</span>
+          
           <motion.div 
             animate={{ y: [0, 8, 0] }} 
             transition={{ duration: 1.5, repeat: Infinity }} 
