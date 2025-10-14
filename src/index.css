@@ -9,7 +9,7 @@ All colors MUST be HSL. */
 @layer base {
   :root {
     /* Core Background & Surfaces */
-    --background: 220 25% 6%;
+    /* --background: 220 25% 6%; */
     --foreground: 210 40% 98%;
     --surface: 220 20% 8%;
     --surface-elevated: 220 15% 12%;
@@ -135,8 +135,9 @@ All colors MUST be HSL. */
 }
 
 .pc-card {
-  height: 65svh;
-  max-height: 540px;
+  /* fluid, clamped sizing so cards scale on small and large viewports */
+  height: clamp(320px, 55svh, 65svh);
+  max-height: clamp(420px, 60vh, 720px);
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -280,9 +281,9 @@ All colors MUST be HSL. */
 
 .pc-user-info {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  bottom: clamp(12px, 3vh, 20px);
+  left: clamp(12px, 3vw, 20px);
+  right: clamp(12px, 3vw, 20px);
   z-index: 2;
   display: flex;
   align-items: center;
@@ -302,8 +303,8 @@ All colors MUST be HSL. */
 }
 
 .pc-mini-avatar {
-  width: 48px;
-  height: 48px;
+  width: clamp(36px, 4.5vw, 48px);
+  height: clamp(36px, 4.5vw, 48px);
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -368,7 +369,7 @@ All colors MUST be HSL. */
 .pc-details {
   width: 100%;
   position: absolute;
-  top: 3em;
+  top: clamp(1.25rem, 6vh, 3em);
   display: flex;
   flex-direction: column;
 }
@@ -376,7 +377,8 @@ All colors MUST be HSL. */
 .pc-details h3 {
   font-weight: 600;
   margin: 0;
-  font-size: min(5svh, 3em);
+  /* headline scales between 1.25rem and 3em */
+  font-size: clamp(1.25rem, 4.5vh, 3em);
   margin: 0;
   background-image: linear-gradient(to bottom, #fff, #6f6fbe);
   background-size: 1em 1.5em;
@@ -390,7 +392,7 @@ All colors MUST be HSL. */
   position: relative;
   top: -12px;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: clamp(12px, 1.6vw, 16px);
   margin: 0 auto;
   width: min-content;
   background-image: linear-gradient(to bottom, #fff, #4a4ac0);
@@ -398,6 +400,37 @@ All colors MUST be HSL. */
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+/* Extra responsive tweaks appended to ensure small/medium screens behave well */
+@media (max-width: 420px) {
+  .pc-card {
+    aspect-ratio: auto;
+    padding: 0.75rem;
+  }
+
+  .pc-user-info {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 8px 10px;
+  }
+
+  .pc-details p {
+    white-space: normal;
+    top: -6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-card {
+    transform: none !important;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 6px 18px -4px;
+  }
+
+  .pc-content {
+    transform: translate3d(0,0,0.01px) !important;
+  }
 }
 
 @keyframes glow-bg {

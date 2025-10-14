@@ -1,21 +1,22 @@
 import AboutSection from '@/components/AboutSection';
-import CircularGallery from '@/components/CircularGallery';
 import ClickSpark from '@/components/ClickSpark';
+import CyberTeamSection from '@/components/CyberTeamSection';
 import EventsPreview from '@/components/EventsPreview';
 import HeroSection from '@/components/HeroSection';
 import LoadingScreen from '@/components/LoadingScreen';
 import MasonryGallery from '@/components/MasonryGallery';
+import Sponsor from '@/components/Sponsor';
 import Navigation from '@/components/Navigation';
-import PixelCard from '@/components/PixelCard';
-import ProfileCard from '@/components/ProfileCard';
 import RippleGrid from '@/components/RippleGrid';
 import ScrollStack from '@/components/ScrollStack';
 import TeamSection from "@/components/TeamSection";
+import EventGallery from '@/components/EventGallery';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import raushan from '../components/assets/mee-removebg-preview.png';
-import ritu from '../components/assets/Ritu mam.png';
-import sneha from '../components/assets/sneha mam.png';
+import ritu from '../components/assets/Person/Ati.jpg';
+import raushan from '../components/assets/Person/mee-removebg-preview.png';
+import sneha from '../components/assets/Person/sneha mam.png';
+
 
 // Gradient constants for ProfileCard
 const DEFAULT_BEHIND_GRADIENT =
@@ -30,26 +31,6 @@ const Index = () => {
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
-
-  // Sample data for components
-
-  const speakers = [
-    {
-      name: "Tejas Dutta",
-      designation: "Student",
-      description: "Student of Computer Science and Engineering"
-    },
-    {
-      name: "Raushan Raj",
-      designation: "Student",
-      description: "18+ years of experience in Student Life"
-    },
-    {
-      name: "Navnita Sharma",
-      designation: "Student",
-      description: "Student of Computer Science and Engineering"
-    }
-  ];
 
   const organizers = [
     {
@@ -92,7 +73,7 @@ const Index = () => {
   const scheduleData = [
     {
       day: 'Day 1',
-      date: 'September 15, 2025',
+      date: 'October 30, 2025',
       items: [
         { time: '9:00', title: 'Opening Ceremony', description: 'Welcome to Anveshan 2K25', speaker: 'Er. Sanjeev Agrawal', location: 'Main Auditorium' },
         { time: '10:30', title: 'AI Innovation Keynote', description: 'The Future of Artificial Intelligence', speaker: 'Prof. Snehlata Mishra', location: 'Tech Hall A' },
@@ -102,7 +83,7 @@ const Index = () => {
     },
     {
       day: 'Day 2',
-      date: 'September 16, 2025',
+      date: 'October 31, 2025',
       items: [
         { time: '9:00', title: 'Blockchain Summit', description: 'Exploring decentralized technologies', speaker: 'Industry Experts', location: 'Conference Room' },
         { time: '11:00', title: 'Tech Startup Pitch', description: 'Young entrepreneurs present their ideas', location: 'Pitch Arena' },
@@ -142,59 +123,23 @@ const Index = () => {
           <Navigation />
           <main>
             <HeroSection />
+            {/* AboutSection now follows HeroSection and will slide up */}
             <AboutSection />
+            <TeamSection />
             <EventsPreview />
+            <EventGallery/>
+
+            <section className="py-16 sm:py-20 tech-bg">
+              <div className="container mx-auto px-4 sm:px-6">
+                <div className="text-center mb-2 sm:mb-2">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-2">
+                    Our <span className="bg-gradient-tech bg-clip-text text-transparent">Sponsors</span>
+                  </h2>
+                </div>
+              </div>
+            </section>
+            <Sponsor/>
             
-            {/* Speakers Section */}
-            <section className="py-16 sm:py-20 tech-bg">
-              <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12 sm:mb-16">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Featured <span className="bg-gradient-tech bg-clip-text text-transparent">Speakers</span>
-                  </h2>
-                  <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Learn from industry leaders and innovators
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                  {speakers.map((speaker, index) => (
-                    <PixelCard
-                      key={index}
-                      name={speaker.name}
-                      designation={speaker.designation}
-                      description={speaker.description}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Event Gallery */}
-            <section className="py-16 sm:py-20 tech-bg">
-              <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12 sm:mb-16">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Event <span className="bg-gradient-tech bg-clip-text text-transparent">Gallery</span>
-                  </h2>
-                  <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Glimpses from previous editions
-                  </p>
-                </div>
-                <MasonryGallery items={galleryItems} />
-              </div>
-            </section>
-
-            {/* Highlights Circular Gallery */}
-            <section className="py-16 sm:py-20 tech-bg">
-              <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12 sm:mb-16">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Event <span className="bg-gradient-tech bg-clip-text text-transparent">Highlights</span>
-                  </h2>
-                </div>
-                <CircularGallery items={highlights} />
-              </div>
-            </section>
 
             {/* Schedule */}
             <section className="py-16 sm:py-20 tech-bg">
@@ -220,40 +165,10 @@ const Index = () => {
               </div>
             </section>
 
-            {/* Organizing Team */}
-            <section className="py-16 sm:py-20 tech-bg">
-              <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12 sm:mb-16">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                    Organizing <span className="bg-gradient-tech bg-clip-text text-transparent">Team</span>
-                  </h2>
-                  <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-                    Meet the passionate team behind Anveshan 2K25
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                  {organizers.map((organizer, index) => (
-                    <ProfileCard
-                      key={index}
-                      name={organizer.name}
-                      title={organizer.designation}
-                      handle={organizer.name.toLowerCase().replace(/\s+/g, '')}
-                      status="Online"
-                      contactText="Contact"
-                      avatarUrl={organizer.image.ritu || organizer.image.sneha || organizer.image.raushan}
-                      miniAvatarUrl={organizer.image.ritu || organizer.image.sneha || organizer.image.raushan}
-                      showUserInfo={true}
-                      enableTilt={true}
-                      enableMobileTilt={false}
-                      behindGradient={DEFAULT_BEHIND_GRADIENT}
-                      innerGradient={DEFAULT_INNER_GRADIENT}
-                      onContactClick={() => console.log(`Contact ${organizer.name}`)}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
-            <TeamSection />
+
+
+            {/* Cyber Team Section */}
+            <CyberTeamSection />
           </main>
         </>
       )}

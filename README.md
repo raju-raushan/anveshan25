@@ -1,24 +1,6 @@
-;; # Welcome to your Lovable project
+## Project info
 
-;; ## Project info
-
-;; **URL**: https://lovable.dev/projects/38382b2f-6bc5-4e89-8440-36c2175034a1
-
-;; ## How can I edit this code?
-
-;; There are several ways of editing your application.
-
-;; **Use Lovable**
-
-;; Simply visit the [Lovable Project](https://lovable.dev/projects/38382b2f-6bc5-4e89-8440-36c2175034a1) and start prompting.
-
-;; Changes made via Lovable will be committed automatically to this repo.
-
-;; **Use your preferred IDE**
-
-;; If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-;; The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This is a Vite + React + TypeScript app using Tailwind CSS and shadcn/ui.
 
 ;; Follow these steps:
 
@@ -60,14 +42,9 @@
 ;; - shadcn-ui
 ;; - Tailwind CSS
 
-;; ## How can I deploy this project?
+## Development
 
-;; Simply open [Lovable](https://lovable.dev/projects/38382b2f-6bc5-4e89-8440-36c2175034a1) and click on Share -> Publish.
-
-;; ## Can I connect a custom domain to my Lovable project?
-
-;; Yes, you can!
-
-;; To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-;; Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Install dependencies: `npm install`
+2. Run dev server: `npm run dev`
+3. Build for production: `npm run build`
+4. Preview production build: `npm run preview`

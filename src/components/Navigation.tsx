@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import logoImage from './assets/logo.png';
+import logoImage from './assets/SAGElogo.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,42 +30,39 @@ const Navigation: React.FC = () => {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled 
-          ? 'bg-glass/80 backdrop-blur-xl border-b border-glass-border shadow-glass' 
+          // FIX: Used standard Tailwind classes for a dark, translucent look
+          ? 'bg-gray-900/80 backdrop-blur-md border-b border-gray-700 shadow-xl' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <nav className="container mx-none px-6 py-4">
+      {/* FIX: Replaced invalid 'mx-none' with 'mx-auto' for centering, and reduced padding a bit (py-3) */}
+      <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-2"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="relative w-40 h-22">
-  <div className="absolute">
-    <img 
-      src={logoImage} 
-      alt="Glowing Logo" 
-      className="w-full h-full opacity-50"
-    />
-  </div>
+            {/* FIX: Decreased logo size (w-24/w-32) and removed invalid 'h-22' class */}
+            <div className="relative w-24 h-auto md:w-32">
+              <div className="absolute top-0 left-0 w-full h-full">
+                <img 
+                  src={logoImage} 
+                  alt="Glowing Logo" 
+                  className="w-12 h-12 opacity-50"
+                />
+              </div>
 
-  <img 
-    src={logoImage} 
-    alt="Logo" 
-    className="relative w-full h-full"
-  />
-</div>
-            {/* <div>
-              <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              अNवEषN
-              </h1>
-              <p className="text-xs text-muted-foreground -mt-1">2025</p>
-            </div> */}
+              <img 
+                src={logoImage} 
+                alt="Logo" 
+                className="relative w-12 h-12"
+              />
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -135,7 +132,8 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="lg:hidden absolute top-full left-0 right-0 bg-glass/95 backdrop-blur-xl border-b border-glass-border shadow-glass"
+              // FIX: Used standard Tailwind classes for dark, translucent look
+              className="lg:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
