@@ -5,9 +5,10 @@ interface CyberCardProps {
   name: string;
   role: string;
   image: string;
+  contact: string;
 }
 
-const CyberCard: React.FC<CyberCardProps> = ({ name, role, image }) => {
+const CyberCard: React.FC<CyberCardProps> = ({ name, role, contact, image }) => {
   return (
     <StyledWrapper>
       <div className="container noselect">
@@ -21,6 +22,9 @@ const CyberCard: React.FC<CyberCardProps> = ({ name, role, image }) => {
           <div className="tracker tr-7" />
           <div className="tracker tr-8" />
           <div className="tracker tr-9" />
+          {/* Note: Original code had more trackers up to tr-25 defined in CSS, but only 9 elements in JSX. 
+          I've kept the JSX as is, assuming you are using the CSS grid to handle the hover zones based on the available trackers.
+          If you need the full 25 trackers, you'll need to add tr-10 through tr-25 here. */}
           <div id="card">
             <div className="card-content">
               <div className="card-glare" />
@@ -28,17 +32,15 @@ const CyberCard: React.FC<CyberCardProps> = ({ name, role, image }) => {
                 <span /><span /><span /><span />
               </div>
               <div className="team-image">
-                <img src={image} alt={name} />
+                <img src={image} />
               </div>
-              <div className="title">{name}</div>
-              <div className="glowing-elements">
-                <div className="glow-1" />
-                <div className="glow-2" />
-                <div className="glow-3" />
-              </div>
+              
               <div className="subtitle">
                 <span>{name}</span>
+                <br />
                 <span className="highlight">{role}</span>
+                <br />
+                <span>{contact}</span>
               </div>
               <div className="card-particles">
                 <span /><span /><span /> <span /><span /><span />
@@ -58,14 +60,14 @@ const CyberCard: React.FC<CyberCardProps> = ({ name, role, image }) => {
 const StyledWrapper = styled.div`
   .container {
     position: relative;
-    width: 190px;
-    height: 254px;
+    width: 250px; /* Increased Width */
+    height: 330px; /* Increased Height */
     transition: 200ms;
   }
 
   .container:active {
-    width: 180px;
-    height: 245px;
+    width: 240px; /* Adjusted active state width */
+    height: 320px; /* Adjusted active state height */
   }
 
   #card {
@@ -91,27 +93,60 @@ const StyledWrapper = styled.div`
     height: 100%;
   }
 
+  /* Adjusted image size and position for the larger card */
   .team-image {
     position: absolute;
-    top: 50%;
+    top: 40%; /* Moved up slightly to make room for text */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid rgba(0, 255, 170, 0.3);
+    width: 160px; /* Increased image size */
+    height: 160px; /* Increased image size */
     z-index: 10;
+    /* remove overflow hidden to allow pop-out */
+    border-radius: 50%;
+    border: 2px solid rgba(0, 255, 170, 0.3);
     opacity: 1;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out, transform 300ms ease;
   }
 
+  /* The image itself */
   .team-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Start fully circular, then relax with clip-path on hover */
+    border-radius: 50%;
+    transition: clip-path 300ms ease, transform 300ms ease, filter 300ms ease;
+    /* default: fully circular crop */
+    clip-path: circle(50% at 50% 50%);
   }
 
+  /* Add a ring overlay to keep the bottom clipped while the top pops out */
+  .team-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    /* a foreground ring that hides overflow below the top lip */
+    box-shadow: 0 0 0 2px rgba(0, 255, 170, 0.3) inset;
+    z-index: 2;
+  }
+
+  /* On hover, push the image slightly forward and relax the clip at the top */
+  .tracker:hover ~ #card .team-image img {
+    /* enlarge and move up for the pop-out feel */
+    transform: translateY(-8px) scale(1.06); /* Adjusted translateY */
+    /* make the circle “open” towards the top by moving the circle center down */
+    clip-path: circle(58% at 50% 60%);
+    /* optional: subtle highlight */
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35));
+  }
+
+  /* Optional: lift the whole avatar group a bit on hover */
+  .tracker:hover ~ #card .team-image {
+    transform: translate(-50%, -54%); /* Adjusted translateY */
+  }
 
   .title {
     opacity: 0;
@@ -134,10 +169,10 @@ const StyledWrapper = styled.div`
 
   .subtitle {
     position: absolute;
-    bottom: 40px;
+    bottom: 45px; /* Adjusted position for larger card */
     width: 100%;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px; /* Increased font size */
     letter-spacing: 2px;
     transform: translateY(30px);
     color: rgba(255, 255, 255, 0.6);
@@ -167,7 +202,7 @@ const StyledWrapper = styled.div`
     border-radius: 50%;
     background: radial-gradient(
       circle at center,
-      rgba(0, 255, 170, 0.3) 0%,
+      rgba(255, 255, 255, 0.3) 0%,
       rgba(0, 255, 170, 0) 70%
     );
     filter: blur(15px);
@@ -226,7 +261,7 @@ const StyledWrapper = styled.div`
       opacity: 1;
     }
     100% {
-      transform: translate(calc(var(--x, 0) * 30px), calc(var(--y, 0) * 30px));
+      transform: translate(calc(var(--x, 0) * 40px), calc(var(--y, 0) * 40px)); /* Increased travel distance */
       opacity: 0;
     }
   }
@@ -314,62 +349,6 @@ const StyledWrapper = styled.div`
     content: "";
     opacity: 80%;
   }
-
-
-
-  .team-image {
-  position: absolute;
-  top: 44%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 130px; /* increased size */
-  height: 130px; /* increased size */
-  z-index: 10;
-  /* remove overflow hidden to allow pop-out */
-  border-radius: 50%;
-  border: 2px solid rgba(0, 255, 170, 0.3);
-  opacity: 1;
-  transition: opacity 300ms ease-in-out, transform 300ms ease;
-}
-
-/* The image itself */
-.team-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Start fully circular, then relax with clip-path on hover */
-  border-radius: 50%;
-  transition: clip-path 300ms ease, transform 300ms ease, filter 300ms ease;
-  /* default: fully circular crop */
-  clip-path: circle(50% at 50% 50%);
-}
-
-/* Add a ring overlay to keep the bottom clipped while the top pops out */
-.team-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  /* a foreground ring that hides overflow below the top lip */
-  box-shadow: 0 0 0 2px rgba(0, 255, 170, 0.3) inset;
-  z-index: 2;
-}
-
-/* On hover, push the image slightly forward and relax the clip at the top */
-.tracker:hover ~ #card .team-image img {
-  /* enlarge and move up for the pop-out feel */
-  transform: translateY(-6px) scale(1.06);
-  /* make the circle “open” towards the top by moving the circle center down */
-  clip-path: circle(58% at 50% 60%);
-  /* optional: subtle highlight */
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35));
-}
-
-/* Optional: lift the whole avatar group a bit on hover */
-.tracker:hover ~ #card .team-image {
-  transform: translate(-50%, -52%);
-}
 
   .canvas {
     perspective: 800px;
@@ -625,7 +604,7 @@ const StyledWrapper = styled.div`
     /* Internet Explorer/Edge */
     user-select: none;
     /* Non-prefixed version, currently
-  									supported by Chrome, Edge, Opera and Firefox */
+        supported by Chrome, Edge, Opera and Firefox */
   }
 
   .card-glare {

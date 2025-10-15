@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import logoImage from './assets/SAGElogo.png';
+import logoImage from './assets/SAGE.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,14 +21,13 @@ const Navigation: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Events', href: '#events' },
     { name: 'Schedule', href: '#schedule' },
-    { name: 'Speakers', href: '#speakers' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           // FIX: Used standard Tailwind classes for a dark, translucent look
           ? 'bg-gray-900/80 backdrop-blur-md border-b border-gray-700 shadow-xl' 
@@ -53,14 +52,14 @@ const Navigation: React.FC = () => {
                 <img 
                   src={logoImage} 
                   alt="Glowing Logo" 
-                  className="w-12 h-12 opacity-50"
+                  className="w-full h-full opacity-50"
                 />
               </div>
 
               <img 
                 src={logoImage} 
                 alt="Logo" 
-                className="relative w-12 h-12"
+                className="relative w-full h-full"
               />
             </div>
           </motion.div>
@@ -89,7 +88,7 @@ const Navigation: React.FC = () => {
               variant="outline" 
               className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-tech"
             >
-              Register Now
+              <a href="https://sageuniversity.in/sage_events/anveshan/" target="_blank">Register Now</a>
             </Button>
           </div>
 
@@ -163,7 +162,7 @@ const Navigation: React.FC = () => {
                     className="w-full bg-gradient-primary hover:shadow-tech transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    Register Now
+                    <a href="https://sageuniversity.in/sage_events/anveshan/" target="_blank">Register Now</a>
                   </Button>
                 </motion.div>
               </div>

@@ -1,19 +1,16 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import CyberCard from './CyberCard';
+import Akash from './assets/Person/Akash.png';
+import Kishan from './assets/Person/Kishan.png';
+import Kushagra from './assets/Person/Kushagra.png';
 import ritu from './assets/Person/Ritu mam.png';
-import rituMam from './assets/Person/Ritu mam.png';
+import Utkarsh from './assets/Person/Utkarsh.png';
 import raushan from './assets/Person/mee-removebg-preview.png';
 import sneha from './assets/Person/sneha mam.png';
-import deepak from './assets/Person/deepak.png';
-import sakshi from './assets/Person/sakshi.png';
-import sanjeev from './assets/Person/sanjeev sir.png';
-import op from './assets/Person/OP Sir.png';
-import ati from './assets/Person/Ati Mam.png';
-import Utkarsh from './assets/Person/Utkarsh.png';
-import Kushagra from './assets/Person/Kushagra.png';
-import Kishan from './assets/Person/Kishan.png';
-import Akash from './assets/Person/Akash.png';
+import suranjit from './assets/Person/Suranjit.png';
+import Sanjay from './assets/Person/Sanjay.png';
+import Debyanshu from './assets/Person/debyanshu.png';
 
 // Team data with 10 members
 const teamMembers = [
@@ -21,19 +18,22 @@ const teamMembers = [
     id: 1,
     name: "Dr. Ritu Tondon",
     role: "Faculty Coordinator",
-    image: ritu
+    image: ritu,
+    contact: "9826685255"
   },
   {
     id: 2,
-    name: "Prof. Snehlata Mishra", 
+    name: "Prof. Suranjit Kosta", 
     role: "Faculty Coordinator",
-    image: sneha
+    image: suranjit,
+    contact: "9713038020"
   },
   {
     id: 3,
     name: "Raushan Raj",
     role: "TechnoParv Coordinator",
-    image: raushan
+    image: raushan,
+    contact: "8804001436"
   },
   {
     id: 4,
@@ -45,13 +45,13 @@ const teamMembers = [
     id: 5,
     name: "Utkarsh Srivastava",
     role: "TechnoParv Coordinator",
-    image: Utkarsh // Using available image as placeholder
+    image: Utkarsh 
   },
   {
     id: 6,
     name: "Sanjay Rai",
     role: "FunFair Coordinator",
-    image: Utkarsh 
+    image: Sanjay 
   },
   {
     id: 7,
@@ -63,25 +63,25 @@ const teamMembers = [
     id: 8,
     name: "Debyanshu Chatterjee",
     role: "Cultural Coordinator",
-    image: Kushagra // Using available image as placeholder
+    image: Debyanshu 
   },
   {
     id: 9,
     name: "Kishan Yadav",
     role: "Sports Coordinator",
-    image: Kishan // Using available image as placeholder
+    image: Kishan 
   },
   {
     id: 10,
     name: "Akash Dwivedi",
     role: "Sports Coordinator",
-    image: Akash // Using available image as placeholder
+    image: Akash 
   }
 ];
 
 const CyberTeamSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+  <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative z-10">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           className="text-center mb-16"
@@ -127,6 +127,7 @@ const CyberTeamSection: React.FC = () => {
                 name={member.name}
                 role={member.role}
                 image={member.image}
+                contact={member.contact}
               />
             </motion.div>
           ))}

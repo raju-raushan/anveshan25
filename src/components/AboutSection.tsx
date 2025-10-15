@@ -6,6 +6,8 @@ import TechnoParv from '../components/assets/Posters/Techno Parv.jpeg';
 import TechnoParvMini from '../components/assets/Posters/Techno Parv mini.jpeg';
 import Cultural from '../components/assets/Posters/Cultural.jpeg';
 import CulturalMini from '../components/assets/Posters/CulturalMini.png';
+import Sports from '../components/assets/Posters/Sports.jpeg';
+import SportsMini from '../components/assets/Posters/SportsMini.jpeg';
 
 
 interface EventModalProps {
@@ -94,8 +96,8 @@ const AboutSection: React.FC = () => {
     },
     {
       title: 'Sports',
-      cardImage: {TechnoParvMini}, 
-      modalImage: {TechnoParv},
+      cardImage: SportsMini, 
+      modalImage: Sports,
       shortDescription: 'Adrenaline-pumping sports tournaments.',
       details: 'Get your game face on! Participate in thrilling sports competitions including cricket, football, and volleyball. Teamwork, strategy, and passion come together on the field.',
       rules: ['Team registration is mandatory.', 'Sportsman spirit is expected.', 'Referee\'s decision is final.']
