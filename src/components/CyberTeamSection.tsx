@@ -11,6 +11,7 @@ import sneha from './assets/Person/sneha mam.png';
 import suranjit from './assets/Person/Suranjit.png';
 import Sanjay from './assets/Person/Sanjay.png';
 import Debyanshu from './assets/Person/debyanshu.png';
+import Astha from './assets/Person/astha.png';
 
 // Team data with 10 members
 const teamMembers = [
@@ -39,43 +40,50 @@ const teamMembers = [
     id: 4,
     name: "Kushagra Neekhra",
     role: "Cultural Coordinator",
-    image: Kushagra
+    image: Kushagra,
+    contact: "8601051570"
   },
   {
     id: 5,
     name: "Utkarsh Srivastava",
     role: "TechnoParv Coordinator",
-    image: Utkarsh 
+    image: Utkarsh,
+    contact: "7652004780"
   },
   {
     id: 6,
     name: "Sanjay Rai",
     role: "FunFair Coordinator",
-    image: Sanjay 
+    image: Sanjay,
+    contact: "8085236467" 
   },
   {
     id: 7,
     name: "Astha Harode",
     role: "FunFair Coordinator",
-    image: ritu 
+    image: Astha,
+    contact: "7000273376" 
   },
   {
     id: 8,
     name: "Debyanshu Chatterjee",
     role: "Cultural Coordinator",
-    image: Debyanshu 
+    image: Debyanshu,
+    contact: "8080156437"
   },
   {
     id: 9,
     name: "Kishan Yadav",
     role: "Sports Coordinator",
-    image: Kishan 
+    image: Kishan,
+    contact: "9111064338" 
   },
   {
     id: 10,
     name: "Akash Dwivedi",
     role: "Sports Coordinator",
-    image: Akash 
+    image: Akash,
+    contact: "9174287753" 
   }
 ];
 

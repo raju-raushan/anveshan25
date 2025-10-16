@@ -8,6 +8,8 @@ import Cultural from '../components/assets/Posters/Cultural.jpeg';
 import CulturalMini from '../components/assets/Posters/CulturalMini.png';
 import Sports from '../components/assets/Posters/Sports.jpeg';
 import SportsMini from '../components/assets/Posters/SportsMini.jpeg';
+import FunFair from '../components/assets/Posters/FunFair.jpeg';
+import FunFairMini from '../components/assets/Posters/FunFairMini.jpeg';
 
 
 interface EventModalProps {
@@ -80,8 +82,8 @@ const AboutSection: React.FC = () => {
     },
     {
       title: 'Fun Fair',
-      cardImage: {TechnoParvMini}, 
-      modalImage: {TechnoParv},
+      cardImage: FunFairMini, 
+      modalImage: FunFair,
       shortDescription: 'Engaging games and fun activities for everyone.',
       details: 'Take a break from the tech and dive into a world of fun! Our Fun Fair offers a variety of games, food stalls, and entertainment to help you relax and make new friends.',
       rules: ['Coupons required for games.', 'Follow instructions at each stall.', 'Enjoy responsibly!']
