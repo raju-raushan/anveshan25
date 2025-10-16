@@ -173,7 +173,7 @@ const Index = () => {
 
 
             {/* Cyber Team Section */}
-            <CyberTeamSection />
+            <CyberTeamSection />-
 
             {/* Contact Section */}
             <section id="contact" className="py-16 sm:py-20 tech-bg">

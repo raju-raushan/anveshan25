@@ -192,7 +192,7 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 pt-4" // Reduced from pt-8
           >
             <Button size="lg" className="w-full sm:w-auto bg-gradient-primary hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
-              Register Now
+              <a href="https://sageuniversity.in/sage_events/anveshan/" target="_blank">Register Now</a>
               <Zap className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
