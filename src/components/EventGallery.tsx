@@ -266,7 +266,7 @@ export default function EventGallery() {
         {!isPreloading && (
           <motion.div
             layout
-            className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -281,6 +281,7 @@ export default function EventGallery() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
+                    className="flex"
                   >
                     <OptimizedImage image={image} index={index} />
                   </motion.div>

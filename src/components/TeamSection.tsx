@@ -1,18 +1,17 @@
 import ProfileCard from "@/components/Organizer";
 import { motion } from "framer-motion";
-import Dean from './assets/Person/dean.png';
+import Ankur from './assets/Person/Ankur.png';
 import Deepak from './assets/Person/Deepak.png';
 import Hemang from './assets/Person/Hemang.png';
 import HOI from './assets/Person/Lalji.png';
+import Mayank from './assets/Person/Mayank.png';
 import Registrar from './assets/Person/Registrar.png';
+import Sachin from './assets/Person/Sachin.png';
 import Sakshi from './assets/Person/Sakshi.png';
 import Sanjeev from './assets/Person/sanjeev sir.png';
+import Sonal from './assets/Person/Sonal.png';
 import DG from './assets/Person/Sudhir.png';
 import VC from './assets/Person/VC.png';
-import Sachin from './assets/Person/Sachin.png';
-import Kuntal from './assets/Person/Kuntal.png';
-import Ankur from './assets/Person/Ankur.png';
-import Sonal from './assets/Person/Sonal.png';
 import SectionWithParticles from "./SectionWithParticles";
 
 export default function TeamSection() {
@@ -22,9 +21,9 @@ export default function TeamSection() {
     { name: "Ms. Sakshi Bansal", role: "Executive Director,The SAGE Group", image: Sakshi, color: "electric-blue", social: { github: "#", twitter: "#" } },
     { name: "Dr. Ankur Arun Kulkarni", role: "Vice Chancellor,SAGE University Indore", image: VC, color: "teal", social: { instagram: "#" } },
     { name: "Dr. Ankur Saxena", role: "Pro Vice-Chancellor, SAGE University, Indore.", image: Ankur, color: "orange", social: { github: "#" } },
+    { name: "Dr. Mayank Saxena", role: "Pro Vice-Chancellor, SAGE University, Indore.", image: Mayank, color: "orange", social: { github: "#" } },
     { name: "Dr. Sudhir Agrawal", role: "Director General, The SAGE Group", image: DG, color: "violet", social: { linkedin: "#" } },
     { name: "Dr. Manish Choudhary", role: "Registrar, SAGE University Indore", image: Registrar, color: "pink", social: { twitter: "#" } },
-    { name: "Dr. Akhilesh Upadhyay", role: "Dean Student Welfare, SAGE University, Indore.", image: Dean, color: "orange", social: { github: "#" } },
     { name: "Dr. Lalji Prasad", role: "Head Of Institute, SAGE University Indore", image: HOI, color: "cyan", social: { instagram: "#" } },
     { name: "Dr. Hemang Shrivastav", role: "Professor & HOD (Advance Computing), SAGE University Indore", image: Hemang, color: "lime", social: { linkedin: "#" } },
     { name: "Dr. Deepak Kumar Yadav", role: "Professor & HOD (IET), SAGE University Indore", image: Deepak, color: "amber", social: { twitter: "#" } },
@@ -42,7 +41,7 @@ export default function TeamSection() {
       particleBaseSize={3.4}
     >
       <section>
-        <div className="container mx-auto px-4 sm:px-6">
+  <div className="container mx-auto px-2 sm:px-4 md:px-6">
           <motion.div
             className="text-center mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -53,10 +52,10 @@ export default function TeamSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="bg-gradient-tech bg-clip-text text-transparent">Patrons</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 px-4">The Minds Behind Anveshan 2K25</p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 px-2 sm:px-4">The Minds Behind Anveshan 2K25</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-full sm:max-w-4xl md:max-w-5xl lg:max-w-7xl mx-auto">
             {teamMembers.map((member, index) => (
               <ProfileCard
                 key={index}

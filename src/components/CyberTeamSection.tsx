@@ -4,14 +4,14 @@ import CyberCard from './CyberCard';
 import Akash from './assets/Person/Akash.png';
 import Kishan from './assets/Person/Kishan.png';
 import Kushagra from './assets/Person/Kushagra.png';
+import Om from './assets/Person/Om.png';
 import ritu from './assets/Person/Ritu mam.png';
-import Utkarsh from './assets/Person/Utkarsh.png';
-import raushan from './assets/Person/mee-removebg-preview.png';
-import sneha from './assets/Person/sneha mam.png';
-import suranjit from './assets/Person/Suranjit.png';
 import Sanjay from './assets/Person/Sanjay.png';
-import Debyanshu from './assets/Person/debyanshu.png';
+import suranjit from './assets/Person/Suranjit.png';
+import Utkarsh from './assets/Person/Utkarsh.png';
 import Astha from './assets/Person/astha.png';
+import Debyanshu from './assets/Person/debyanshu.png';
+import raushan from './assets/Person/mee-removebg-preview.png';
 
 // Team data with 10 members
 const teamMembers = [
@@ -35,6 +35,13 @@ const teamMembers = [
     role: "TechnoParv Coordinator",
     image: raushan,
     contact: "8804001436"
+  },
+    {
+    id: 4,
+    name: "Om Shukla",
+    role: "TechnoParv Coordinator",
+    image: Om,
+    contact: "8989468730"
   },
   {
     id: 4,
@@ -107,7 +114,7 @@ const CyberTeamSection: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}

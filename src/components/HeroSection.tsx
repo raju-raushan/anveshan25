@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 // Assuming these are custom components you have
-import SplitText from '@/components/SplitText'; 
-import { Button } from '@/components/ui/button'; 
+import { Button } from '@/components/ui/button';
 
 // Assets
 import logoImage from './assets/logo copy.png';
-import backgroundVideo from './assets/TimeBg.mp4'; 
+import backgroundVideo from './assets/TimeBg.mp4';
 
 // ----------------------------------------------------------------------
 // 1. CountdownTimer Component (Kept unchanged for brevity)
@@ -121,24 +120,24 @@ const HeroSection: React.FC = () => {
       />
 
       {/* 3. Main Content - Added py-12 for better vertical spacing on small screens */}
-      <div className="relative container mx-auto px-4 sm:px-6 text-center py-12" style={{ zIndex: 20 }}>
+  <div className="relative container mx-auto px-4 sm:px-6 text-center py-8 sm:py-12" style={{ zIndex: 20 }}>
         <motion.div 
           initial={{ opacity: 0, y: 50 }} 
           animate={{ opacity: contentVisible ? 1 : 0, y: contentVisible ? 0 : 50 }} 
           transition={{ duration: 1, ease: "easeOut", delay: contentVisible ? 0 : 3.5 }} 
           // Reduced max-width slightly and adjusted vertical spacing
-          className="max-w-4xl mx-auto space-y-4 sm:space-y-6"
+          className="max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto space-y-4 sm:space-y-6"
         >
           {/* Main Title Area */}
           <div className="space-y-3 sm:space-y-4"> {/* Reduced vertical spacing */}
             
             {/* LOGO SIZE REDUCTION & CENTERING */}
-            <div className='flex justify-center items-center h-auto'>
+            <div className='flex flex-col sm:flex-row justify-center items-center h-auto gap-4'>
                 <img 
                     src={logoImage} 
                     alt="Logo" 
                     // New class: Constrains the width and height of the image
-                    className="w-full max-w-xl max-h-52 sm:max-h-72 object-contain" 
+                    className="w-full max-w-xs sm:max-w-md md:max-w-xl max-h-40 sm:max-h-52 md:max-h-72 object-contain" 
                 />
             </div>
             {/* END LOGO SIZE REDUCTION */}
@@ -147,7 +146,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.8, delay: baseDelay + 0.4 }} 
-              className="text-lg sm:text-xl md:text-2xl text-white/90 font-light tracking-wide px-4"
+              className="text-base sm:text-lg md:text-2xl text-white/90 font-light tracking-wide px-2 sm:px-4"
             >
               The Ultimate University Technical Festival is back with a bang!
             </motion.p>
@@ -167,7 +166,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: baseDelay + 0.8 }} 
-            className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-4" 
+            className="text-base sm:text-lg md:text-xl text-white/80 max-w-full sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4" 
           >
             Experience the future of technology through cutting-edge competitions, 
             groundbreaking workshops, and innovations that will reshape tomorrow.
@@ -178,7 +177,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 40 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: baseDelay + 1.0 }} 
-            className="mt-6 sm:mt-8 px-4" // Reduced from mt-12/16
+            className="mt-6 sm:mt-8 px-2 sm:px-4" // Reduced from mt-12/16
           >
             <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">Time Left to Innovation!</h3> {/* Reduced mb-4 to mb-3 */}
             <CountdownTimer targetDate={targetDate} />
@@ -189,7 +188,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: baseDelay + 1.4 }} 
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 pt-4" // Reduced from pt-8
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 sm:px-4 pt-4" // Reduced from pt-8
           >
             <Button size="lg" className="w-full sm:w-auto bg-gradient-primary hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
               <a href="https://sageuniversity.in/sage_events/anveshan/" target="_blank">Register Now</a>
