@@ -6,16 +6,14 @@ import EventsPreview from '@/components/EventsPreview';
 import HeroSection from '@/components/HeroSection';
 import LoadingScreen from '@/components/LoadingScreen';
 import Navigation from '@/components/Navigation';
-import RippleGrid from '@/components/RippleGrid';
+// import RippleGrid from '@/components/RippleGrid';
 import ScrollStack from '@/components/ScrollStack';
 import Sponsor from '@/components/Sponsor';
 import TeamSection from "@/components/TeamSection";
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import ritu from '../components/assets/Person/Ati.jpg';
-import raushan from '../components/assets/Person/mee-removebg-preview.png';
-import sneha from '../components/assets/Person/sneha mam.png';
 import Footer from '../components/Footer';
+import Particles from '../components/ParticleBackground';
 
 
 
@@ -33,50 +31,13 @@ const Index = () => {
     setIsLoading(false);
   };
 
-  const organizers = [
-    {
-      name: "Dr. Ritu tondon",
-      designation: "Faculty Coordinator",
-      description: "Passionate about bringing together tech enthusiasts and creating memorable experiences.",
-      image: {ritu}
-    },
-    {
-      name: "Prof. Snehlata Mishra",
-      designation: "Faculty Coordinator",
-      description: "Full-stack developer with expertise in modern web technologies and event management.",
-      image: {sneha}
-    },
-    {
-      name: "Raushan Raj",
-      designation: "Student Coordinator",
-      description: "Creative marketing professional specializing in tech events and community building.",
-      image: {raushan}
-    }
-  ];
-
-  const galleryItems = [
-    { id: 1, image: '', title: 'Hackathon 2024', category: 'Competition', height: 'medium' as const },
-    { id: 2, image: '', title: 'AI Workshop', category: 'Learning', height: 'tall' as const },
-    { id: 3, image: '', title: 'Robot Demo', category: 'Exhibition', height: 'short' as const },
-    { id: 4, image: '', title: 'Tech Talk', category: 'Conference', height: 'medium' as const },
-    { id: 5, image: '', title: 'Innovation Fair', category: 'Showcase', height: 'tall' as const },
-    { id: 6, image: '', title: 'Networking', category: 'Social', height: 'short' as const }
-  ];
-
-  const highlights = [
-    { id: 1, title: 'Innovation', description: 'Cutting-edge technology showcases' },
-    { id: 2, title: 'Competition', description: 'Challenging contests and hackathons' },
-    { id: 3, title: 'Learning', description: 'Educational workshops and seminars' },
-    { id: 4, title: 'Networking', description: 'Connect with industry professionals' },
-    { id: 5, title: 'Awards', description: 'Recognition for outstanding achievements' }
-  ];
 
   const scheduleData = [
     {
       day: 'Day 1',
       date: 'October 30, 2025',
       items: [
-        { time: '9:00', title: 'Opening Ceremony', description: 'Welcome to Anveshan 2K25', speaker: 'Er. Sanjeev Agrawal', location: 'Main Auditorium' },
+        { time: '9:00', title: 'Opening Ceremony', description: 'Welcome to Anveshan 2K25', speaker: 'Er. Sanjeev Agrawal', location: 'KalpVriksh Auditorium' },
         { time: '10:30', title: 'AI Innovation Keynote', description: 'The Future of Artificial Intelligence', speaker: 'Prof. Snehlata Mishra', location: 'Tech Hall A' },
         { time: '14:00', title: 'Hackathon Begins', description: '48-hour coding marathon starts', location: 'Innovation Lab' },
         { time: '16:00', title: 'Robotics Workshop', description: 'Build and program autonomous robots', speaker: 'Dr. Ritu Tondon', location: 'Lab B' }
@@ -91,24 +52,22 @@ const Index = () => {
         { time: '14:00', title: 'Gaming Competition', description: 'Esports and game development contest', location: 'Gaming Zone' },
         { time: '18:00', title: 'Cultural Night', description: 'Celebrating diversity in tech', location: 'Open Arena' }
       ]
+    },
+    {
+      day: 'Day 3',
+      date: 'November 1, 2025',
+      items: [
+        { time: '9:00', title: 'Blockchain Summit', description: 'Exploring decentralized technologies', speaker: 'Industry Experts', location: 'Conference Room' },
+        { time: '11:00', title: 'Tech Startup Pitch', description: 'Young entrepreneurs present their ideas', location: 'Pitch Arena' },
+        { time: '14:00', title: 'Gaming Competition', description: 'Esports and game development contest', location: 'Gaming Zone' },
+        { time: '18:00', title: 'Cultural Night', description: 'Celebrating diversity in tech', location: 'Open Arena' }
+      ]
     }
   ];
 
   return (
     <div className="min-h-screen relative bg-black">
       {/* Global Ripple Grid Background */}
-      <div className="fixed inset-0" style={{ zIndex: -1 }}>
-        <RippleGrid
-          enableRainbow={false}
-          gridColor="#3b82f6"
-          rippleIntensity={0.08}
-          gridSize={8}
-          gridThickness={12}
-          mouseInteraction={true}
-          mouseInteractionRadius={1.5}
-          opacity={0.7}
-        />
-      </div>
       
       {/* Click Spark Effect */}
       <ClickSpark />
@@ -125,6 +84,7 @@ const Index = () => {
           <main>
             <HeroSection />
             {/* AboutSection now follows HeroSection and will slide up */}
+            
             <AboutSection />
             
             <EventsPreview />

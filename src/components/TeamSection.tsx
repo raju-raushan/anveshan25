@@ -17,18 +17,18 @@ import SectionWithParticles from "./SectionWithParticles";
 export default function TeamSection() {
   // Create 10 sample team members; reuse available images for demo.
   const teamMembers = [
-    { name: "Er. Sanjeev Agrawal", role: "Chairman and Managing Director,The SAGE Group", image: Sanjeev, color: "neon-green", social: { linkedin: "#", email: "#" } },
-    { name: "Ms. Sakshi Bansal", role: "Executive Director,The SAGE Group", image: Sakshi, color: "electric-blue", social: { github: "#", twitter: "#" } },
+    { name: "Er. Sanjeev Agrawal", role: "Chairman,The SAGE Group", image: Sanjeev, color: "neon-green", social: { linkedin: "#", email: "#" } },
+    { name: "Ms. Sakshi Bansal", role: "Managing Director,The SAGE Group", image: Sakshi, color: "electric-blue", social: { github: "#", twitter: "#" } },
     { name: "Dr. Ankur Arun Kulkarni", role: "Vice Chancellor,SAGE University Indore", image: VC, color: "teal", social: { instagram: "#" } },
     { name: "Dr. Ankur Saxena", role: "Pro Vice-Chancellor, SAGE University, Indore.", image: Ankur, color: "orange", social: { github: "#" } },
     { name: "Dr. Mayank Saxena", role: "Pro Vice-Chancellor, SAGE University, Indore.", image: Mayank, color: "orange", social: { github: "#" } },
     { name: "Dr. Sudhir Agrawal", role: "Director General, The SAGE Group", image: DG, color: "violet", social: { linkedin: "#" } },
     { name: "Dr. Manish Choudhary", role: "Registrar, SAGE University Indore", image: Registrar, color: "pink", social: { twitter: "#" } },
     { name: "Dr. Lalji Prasad", role: "Head Of Institute, SAGE University Indore", image: HOI, color: "cyan", social: { instagram: "#" } },
-    { name: "Dr. Hemang Shrivastav", role: "Professor & HOD (Advance Computing), SAGE University Indore", image: Hemang, color: "lime", social: { linkedin: "#" } },
-    { name: "Dr. Deepak Kumar Yadav", role: "Professor & HOD (IET), SAGE University Indore", image: Deepak, color: "amber", social: { twitter: "#" } },
-    { name: "Dr. Sachin Patel", role: "Professor & HOD (CS/IT), SAGE University Indore", image: Sachin, color: "amber", social: { twitter: "#" } },
-    { name: "Dr. Sonal Tripathi", role: "HOD, Department of Applied Science, SAGE University Indore", image: Sonal, color: "amber", social: { twitter: "#" } },
+    { name: "Dr. Hemang Shrivastav", role: "HOD (Advance Computing), SAGE University Indore", image: Hemang, color: "lime", social: { linkedin: "#" } },
+    { name: "Dr. Deepak Kumar Yadav", role: "HOD (IET), SAGE University Indore", image: Deepak, color: "amber", social: { twitter: "#" } },
+    { name: "Dr. Sachin Patel", role: "HOD (CS/IT), SAGE University Indore", image: Sachin, color: "amber", social: { twitter: "#" } },
+    { name: "Prof. Sonal Tripathi", role: "HOD, Department of Applied Science, SAGE University Indore", image: Sonal, color: "amber", social: { twitter: "#" } },
   ];
 
   return (
